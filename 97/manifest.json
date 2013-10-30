@@ -1,7 +1,7 @@
 {
 	"id": "97",
-	"version_code": 0,
-	"name": "video test",
+	"version_code": 1,
+	"name": "公式测试",
 	"type": "web_app",
 	"launchable": 1,
 	"package_name": "org.sunlib.demo",
