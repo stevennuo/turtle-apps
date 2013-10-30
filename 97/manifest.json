@@ -1,0 +1,11 @@
+{
+	"id": "97",
+	"version_code": 0,
+	"name": "video test",
+	"type": "web_app",
+	"launchable": 1,
+	"package_name": "org.sunlib.demo",
+	"url": "/app/97",
+	"home": "/index.html",
+	"description": "A small game to paint out letters. Demo for FirefoxOS"
+}
