@@ -1,0 +1,13 @@
+{
+    "id": "101",
+	"version_code": 19,
+    "name": "提高班",
+    "type": "web_app",
+    "launchable": 1,
+    "package_name": "org.sunlib.exercise",
+    "url": "/app/101",
+    "home": "/index.html",
+    "description": "提高班是一款自适应学习软件，通过有计划的学习，学生可以高效获得知识并通过考试",
+
+    "local_folder": "/app/web"
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="AppListCtrl">
+<iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameBorder="0"
+        style="width:100%;height: 100%" ng-src="{{currentSrc}}">iframe
+</iframe>
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-bottom app_nav" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex6-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-th"></i>&nbsp;应用</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex6-collapse">
+        <ul class="nav navbar-nav">
+            <li ng-class="isActive(app)" ng-repeat="app in apps">
+                <a ng-click="changeApp(app)" href="#">{{app.name}}</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="#" onclick="location.reload()">
+                <span class="glyphicon glyphicon-repeat"></span>&nbsp;刷新</a></li>
+            <li><a href="#">最后刷新 {{lastSuccess | date:'MM-dd HH:mm:ss'}}</a></li>
+            <li><a href="#">版本 {{version}}</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <blockquote ng-repeat="n in news">
+                    <p ng-bind-html-unsafe="n"></p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

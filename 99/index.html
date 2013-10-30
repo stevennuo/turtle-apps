@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    foo = function () {
+        console.log("full screen");
+        var video = document.getElementById('video');
+        video.webkitRequestFullscreen(); // Chrome and Safari
+        video.play();
+    }
+</script>
+<video controls="" id="video"
+       src="/app/169f3a0b-cb04-4058-9949-a9474b0e5670/67b44760-0953-44e9-9baa-b13633eddbc8/451bb730-ab20-4948-9a3d-4f70274645de">
+</video>
+<button onclick="foo()"></button>
+</body>
+</html>

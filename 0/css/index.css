@@ -1,0 +1,24 @@
+/**
+ * Created by fengxiaoping on 10/13/13.
+ */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-bottom: 50px;
+}
+
+.app_container {
+    text-align: center;
+    margin-top: 25px;
+    height: 220px;
+    overflow: hidden
+}
+
+.app_description {
+    height:100px;
+    overflow: hidden;
+}
+

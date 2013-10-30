@@ -1,0 +1,12 @@
+{
+	"id": "0",
+	"name": "阳光书屋",
+	"package_name": "org.sunlib.launcher",
+	"version_code": 2,
+	"launchable": 1,
+	"url": "/app/0",
+	"home": "/apps.html",
+	"description": "阳光书屋乡村信息化教育行动是一项公益教育计划。我们致力于用科技填补城乡教育鸿沟。以平板电脑为载体，以无线局域网为渠道，让每一个农村的孩子都接触到优质的教育资源",
+
+	"local_folder": "/app/launcher"
+}

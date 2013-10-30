@@ -1,0 +1,11 @@
+{
+	"id": "98",
+	"version_code": 0,
+	"name": "画字母",
+	"type": "web_app",
+	"launchable": 1,
+	"package_name": "org.sunlib.demo",
+	"url": "/app/98",
+	"home": "/index.html",
+	"description": "A small game to paint out letters. Demo for FirefoxOS"
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/app-small.js"></script>
+</head>
+<body style="background-color: #e5e5e5;height: 100%;" ng-controller="AppListCtrl">
+
+<div class="container" style="margin-top: 50px">
+    <div style="width: 100%">
+        <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img style="width:100%" src="img/home_intro_1.png" alt="First slide">
+                </div>
+                <div class="item">
+                    <img style="width:100%" src="img/home_intro_2.png" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img style="width:100%" src="img/home_intro_3.png" alt="Third slide">
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px">
+        <div ng-repeat="app in apps" class="col-sm-6 col-md-3 app_container">
+            <div class="well well-lg">
+                <div>
+                    <!--<img src="img/pencils.svg">-->
+                    <h3>{{app.name}}</h3>
+
+                    <p class="app_description">{{app.description}}</p>
+                    <!--<a href="{{app.home_url}}" class="btn btn-primary btn-lg">进入</a>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3 app_container">
+            <div class="well well-lg">
+                <div>
+                    <h3>更多</h3>
+
+                    <p class="app_description">我们正在开发更多更好玩更有用的应用，敬请期待</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
