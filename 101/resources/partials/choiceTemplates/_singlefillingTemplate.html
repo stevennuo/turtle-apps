@@ -1,6 +1,6 @@
 <div id='problem{{$index}}'>
-    <div class="col-md-10 question-container">
-        <div class="question-content col-md-12">
+    <div class="col-sm-10 col-md-10 question-container">
+        <div class="question-content">
             <!--<span>第&nbsp;{{ $index+1 }}&nbsp;题&nbsp;/&nbsp;共&nbsp;{{ total }}&nbsp;题&nbsp;{{ problem.parent_id }}</span><br> -->
             <span>{{ problemIndex+$index+1 }}.&nbsp;<span class="question-type">({{ type }})</span></span>
             <span>{{ problem.title }}</span><br>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="col-md-2 ctrlBar">
+    <div class="col-sm-2 col-md-2 ctrlBar">
         <div class="continue-btn" ng-hide='hideSubmitButton' class="submit-btn"
              ng-click='submitAnswer()'>
             <img ng-src="resources/img/{{ submitIcon }}.png"/>
