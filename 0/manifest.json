@@ -2,7 +2,7 @@
 	"id": "0",
 	"name": "阳光书屋",
 	"package_name": "org.sunlib.launcher",
-	"version_code": 2,
+	"version_code": 3,
 	"launchable": 1,
 	"url": "/app/0",
 	"home": "/apps.html",
