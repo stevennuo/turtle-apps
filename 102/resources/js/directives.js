@@ -1128,6 +1128,7 @@ angular.module('SunExercise.directives', [])
                     }
                     $scope.problemResult = "default";
                     $scope.writeAnswer = singleFilling;
+                    $scope.madeChoice = true;
                 }
 
                 $scope.hasExplanation = function () {
