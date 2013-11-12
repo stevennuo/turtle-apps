@@ -1,0 +1,11 @@
+{
+    "id": "96",
+    "version_code": 0,
+    "name": "适配性测试",
+    "type": "web_app",
+    "launchable": 1,
+    "package_name": "org.sunlib.test",
+    "url": "/app/96",
+    "home": "/index.html",
+    "description": "测试机器兼容性的应用"
+}

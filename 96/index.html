@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<div>
+    <style>
+        body {
+            background-color: #e6e6e6;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 0 auto auto;
+            width: 90%;
+        }
+
+        .test_item {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: white;
+            width: 50%;
+        }
+
+        .test_name {
+            font-size: 24px;
+        }
+
+        .test_desc {
+            font-size: 10px;
+            color: #808080;
+        }
+
+        audio {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            background-color: steelblue;
+            border: 0;
+            font-size: 20px;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+
+    <script type="application/javascript">
+        var toFullScreen = function (video) {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen(); // Firefox
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen(); // Chrome and Safari
+            }
+        }
+
+        var openVideo1 = function () {
+            var v = document.getElementById("testvideo_1");
+            v.play();
+            toFullScreen(v);
+        }
+    </script>
+    <div class="test_item">
+        <div class="test_name">Yes I do</div>
+        <div class="test_desc">
+            Audio file with ID3 version 2.3.0, contains: MPEG ADTS, layer III, v1, 192 kbps, 44.1 kHz, Monaural
+        </div>
+        <audio src="2.Yes-I-do.mp3" controls></audio>
+    </div>
+
+    <div class="test_item">
+        <div class="test_name">Ding ling~</div>
+        <div class="test_desc">
+            Audio file with ID3 version 2.2.0, contains: MPEG ADTS, layer III, v1, 320 kbps, 44.1 kHz, Stereo
+        </div>
+        <audio src="correct.mp3" controls></audio>
+    </div>
+
+    <div class="test_item">
+        <div class="test_name">PDF</div>
+        <div class="test_desc">
+            需要机器中安装Adobe pdf reader, v1.3
+        </div>
+        <button onclick='parent.openPDF("/app/97/test.pdf");'>打开PDF</button>
+    </div>
+
+    <div class="test_item">
+        <div class="test_name">视频 annoying orange</div>
+        <div class="test_desc">
+            ISO Media, MPEG v4 system, version 2
+        </div>
+        <video id="testvideo_1" src="test.mp4" style="display: none"></video>
+        <button onclick="openVideo1()">全屏播放视频</button>
+    </div>
+
+
+</div>
+
+</body>
+</html>
