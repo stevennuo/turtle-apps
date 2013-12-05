@@ -475,24 +475,19 @@ angular.module('SunExercise.directives', [])
                                 lessonUserdata.summary.correct_count = args.summary.correct_count;
                                 lessonUserdata.summary.correct_percent = args.summary.correct_percent;
                             }
-
-                            //operate jump logic
-                            if (index != lessonData.activities.length - 1) {
-                                //check if the listener receives jump args
-                                if ((typeof args !== "undefined") && (typeof args.activity !== "undefined")) {
-                                    lessonUserdata.current_activity = args.activity;
-                                    if (args.should_transition) {
-                                        //userdata analyzing completed, flush the current userdata
-                                        lessonSandbox.flushUserdata(lessonData.id);
-                                        continueLesson(lessonData.id, args.activity);
-                                    }
-                                } else {
-                                    lessonUserdata.current_activity = lessonData.activities[index + 1].id;
-                                    if (args.should_transition) {
-                                        //userdata analyzing completed, flush the current userdata
-                                        lessonSandbox.flushUserdata(lessonData.id);
-                                        continueLesson(lessonData.id, lessonData.activities[index + 1].id);
-                                    }
+                            if ((typeof args !== "undefined") && (typeof args.activity !== "undefined")) {
+                                lessonUserdata.current_activity = args.activity;
+                                if (args.should_transition) {
+                                    //userdata analyzing completed, flush the current userdata
+                                    lessonSandbox.flushUserdata(lessonData.id);
+                                    continueLesson(lessonData.id, args.activity);
+                                }
+                            } else if (index != lessonData.activities.length - 1) {
+                                lessonUserdata.current_activity = lessonData.activities[index + 1].id;
+                                if (args.should_transition) {
+                                    //userdata analyzing completed, flush the current userdata
+                                    lessonSandbox.flushUserdata(lessonData.id);
+                                    continueLesson(lessonData.id, lessonData.activities[index + 1].id);
                                 }
                             } else {
                                 //set the current_activity to undefined so that the back button can operate as intended
