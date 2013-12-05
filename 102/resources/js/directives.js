@@ -422,11 +422,13 @@ angular.module('SunExercise.directives', [])
                         if (args.should_transition) {
                             //give student star if qualified
                             if (typeof lessonUserdata.summary.correct_percent != "undefined") {
+                                // default star is 3
+                                delete lessonUserdata.summary.star ;
                                 if ((typeof lessonData.star3 == "undefined") || (lessonUserdata.summary.correct_percent >= lessonData.star3)) {
                                     lessonUserdata.summary.star = 3;
                                 } else if ((typeof lessonData.star2 == "undefined") || (lessonUserdata.summary.correct_percent >= lessonData.star2)) {
                                     lessonUserdata.summary.star = 2;
-                                } else if ((typeof lessonData.star2 == "undefined") || (lessonUserdata.summary.correct_percent >= lessonData.star1)) {
+                                } else if ((typeof lessonData.star1 == "undefined") || (lessonUserdata.summary.correct_percent >= lessonData.star1)) {
                                     lessonUserdata.summary.star = 1;
                                 }
                             }
