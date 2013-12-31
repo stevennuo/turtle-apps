@@ -30,11 +30,14 @@ var chapterTreeDrawer = (function () {
                     for (var k = 0; k < j.lessons[i].requirements.length; k++) {
                         if (!c[j.lessons[i].requirements[k]])
                             c[j.lessons[i].requirements[k]] = [];
-                        c[j.lessons[i].requirements[k]].push(j.lessons[i].id);
+                        c[j.lessons[i].requirements[k]].unshift(j.lessons[i].id);
                     }
                 }
             }
         }
+
+		// 3NF
+		thirdnf(c,j.lessons);
 
         // ~~~~~~~~~~~~~~~~~~
         // depth first search, fill vmap, hmap, max_width
@@ -120,6 +123,42 @@ var chapterTreeDrawer = (function () {
         }
 //
     } // the end of genmap
+
+	function thirdnf(conn, lessons) {
+		for (var i = 0; i < lessons.length; i++) {
+			var temp = [];
+			var rls = conn[lessons[i].id]
+			if (rls) {
+				// check whether Father-Child relations exists in some connection
+				for (var j = 0; j < rls.length; j++) {
+					for (var k = 0; k < rls.length; k++) {
+						for (var l = 0; conn[rls[k]] && l < conn[rls[k]].length; l++) {
+							if (conn[rls[k]][l] == rls[j]) {
+								// console.log("MATCH -- first:" + rls[k] + " second:" + rls[j] + " firstchild:" + conn[rls[k]]);
+								temp.push(rls[j]);
+							}
+						}
+					}
+				}
+
+				// if exists, remove the child
+				if(temp.length > 0) {
+				conn[lessons[i].id] = rls.filter(function(x) {
+					var inno = true;
+					for (var j = 0; j < temp.length; j++) {
+						if(x == temp[j]) {
+							inno = false;
+							break;
+						}
+					}
+					return inno;
+				});
+			}
+			}
+		}
+	}
+
+
 
     function dfs(enter, conn, hmap, vmap) {
 
